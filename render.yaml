@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: goldenpupcare-try-on-preview
+    runtime: docker
+    plan: free
+    branch: feature/goldenpupcare-ai-try-on
+    rootDir: goldenpupcare-try-on
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /config
+    envVars:
+      - key: IMAGE_MODEL
+        value: gpt-image-1.5
+      - key: PRODUCT_TITLE
+        value: Senior Pup Mobility Sling
+      - key: DAILY_LIMIT
+        value: "5"
