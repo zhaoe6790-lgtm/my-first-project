@@ -1,0 +1,6 @@
+{% if block.settings.try_on_url != blank %}
+  <a class="button button--secondary button--full-width" href="{{ block.settings.try_on_url | escape }}" target="_blank" rel="noopener">{{ block.settings.label | escape }}</a>
+{% endif %}
+{% schema %}
+{"name":"AI pet try-on","settings":[{"type":"url","id":"try_on_url","label":"Deployed try-on service URL"},{"type":"text","id":"label","label":"Button label","default":"Try it on your dog"}],"presets":[{"name":"AI pet try-on"}]}
+{% endschema %}
